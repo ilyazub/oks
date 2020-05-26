@@ -85,11 +85,11 @@ self.addEventListener("fetch", (event) => {
   );
 });
 
-export default {
-  plugins: [
-    replace({
-      "process.env.SAPPER_TIMESTAMP":
-        process.env.SAPPER_TIMESTAMP || Date.now(),
-    }),
-  ],
-};
+// export default {
+//   plugins: [
+//     replace({
+//       "process.env.SAPPER_TIMESTAMP":
+//         process.env.SAPPER_TIMESTAMP || Date.now(),
+//     }),
+//   ],
+// };
