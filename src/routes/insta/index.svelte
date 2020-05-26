@@ -12,13 +12,6 @@
   export let posts;
 </script>
 
-<style>
-  ul {
-    margin: 0 0 1em 0;
-    line-height: 1.5;
-  }
-</style>
-
 <svelte:head>
   <title>Insta</title>
 </svelte:head>
@@ -32,7 +25,7 @@
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
     <li class="my-2 px-2 w-1/3 overflow-hidden">
-      <a rel="prefetch" href="insta/{post.slug}">
+      <a rel="prefetch" href="insta/{post.id}">
         <img src={post.image} alt={post.slug} />
       </a>
     </li>

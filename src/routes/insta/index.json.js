@@ -27,6 +27,7 @@ export async function get(req, res) {
 
   const contents = JSON.stringify(
     posts.graphql.user.edge_owner_to_timeline_media.edges.map(({ node }) => ({
+      id: node.id,
       image: node.display_url,
       slug: node.accessibility_caption,
     }))
