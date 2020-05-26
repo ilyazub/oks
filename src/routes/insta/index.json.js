@@ -4,7 +4,7 @@ import got from "got";
 import Keyv from "keyv";
 import { KeyvFile } from "keyv-file";
 
-const username = "ilya.zoob";
+const username = "oksanazub_photography";
 
 const cache = new Keyv({
   store: new KeyvFile({
@@ -17,12 +17,13 @@ export async function get(req, res) {
     "Content-Type": "application/json",
   });
 
-  const {
-    body: posts,
-  } = await got(`https://www.instagram.com/${username}/?__a=1`, {
-    cache,
-    responseType: "json",
-  });
+  const { body: posts } = await got(
+    `https://www.instagram.com/${username}/?__a=1`,
+    {
+      cache,
+      responseType: "json",
+    }
+  );
 
   const contents = JSON.stringify(
     posts.graphql.user.edge_owner_to_timeline_media.edges.map(({ node }) => ({
