@@ -18,7 +18,7 @@ export async function get(req, res) {
   });
 
   const { body: posts } = await got(
-    `https://www.instagram.com/${username}/?__a=1`,
+    encodeURI(`https://www.instagram.com/${username}/?__a=1`),
     {
       cache,
       responseType: "json",
