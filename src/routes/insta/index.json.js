@@ -1,15 +1,28 @@
-import axios from "axios";
+import { tmpdir } from "os";
+
+import got from "got";
+import Keyv from "keyv";
+import { KeyvFile } from "keyv-file";
 
 const username = "ilya.zoob";
+
+const cache = new Keyv({
+  store: new KeyvFile({
+    filename: `${tmpdir()}/keyv-file/insta/${username}.json`,
+  }),
+});
 
 export async function get(req, res) {
   res.writeHead(200, {
     "Content-Type": "application/json",
   });
 
-  const { data: posts } = await axios.get(
-    `https://www.instagram.com/${username}/?__a=1`
-  );
+  const {
+    body: posts,
+  } = await got(`https://www.instagram.com/${username}/?__a=1`, {
+    cache,
+    responseType: "json",
+  });
 
   const contents = JSON.stringify(
     posts.graphql.user.edge_owner_to_timeline_media.edges.map(({ node }) => ({
