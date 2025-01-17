@@ -2,7 +2,7 @@ import { ChevronUp, Facebook, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 w-full p-6 flex justify-between items-center text-white z-20">
+    <footer className="fixed -bottom-20 w-full p-6 flex justify-between items-center text-white z-20">
       <ChevronUp className="w-6 h-6 cursor-pointer" onClick={() => window.scrollTo(0, 0)} />
 
       <div className="flex space-x-4">

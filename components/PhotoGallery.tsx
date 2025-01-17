@@ -18,7 +18,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   return (<>
-    <div className="relative z-10 min-h-screen -top-8">
+    <div className="relative z-10 min-h-screen -top-20">
       <div className="h-screen flex flex-col justify-end pb-16">
         <div className="text-center text-white mt-8">
           <p className="mb-2">Scroll to view more</p>
