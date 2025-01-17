@@ -40,7 +40,7 @@ export default function Modal({ photo, onClose, photos }: ModalProps) {
   const currentPhoto = photos[currentIndex];
 
   return (
-    (<div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+    (<div className="fixed inset-0 bg-opacity-90 flex items-center justify-center z-50">
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-white hover:text-gray-300"

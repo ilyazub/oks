@@ -26,30 +26,31 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        {photos.map((photo, index) => (
-          <div
-            key={index + 4}
-            className={`relative overflow-hidden rounded-lg shadow-lg cursor-pointer ${
-              (index + 4) % 5 === 0 ? 'col-span-2 row-span-2' : ''
-            }`}
-            onClick={() => setSelectedPhoto(photo)}
-          >
-            <Image
-              src={photo.src || `https://picsum.photos/${photo.width}/${photo.height}`}
-              alt={photo.alt}
-              width={photo.width}
-              height={photo.height}
-              className="transition-transform duration-300 hover:scale-105"
-              sizes="100vw"
-              style={{
-                width: "100%",
-                height: "auto"
-              }} />
-            <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity duration-300 flex items-end">
-              <span className="text-white p-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                {photo.alt}
-              </span>
-            </div>
+        {[0, 1, 2, 3].map((columnIndex) => (
+          <div key={columnIndex} className="grid gap-4">
+            {photos
+              .filter((_, index) => index % 4 === columnIndex)
+              .map((photo, index) => (
+                <div
+                  key={index}
+                  className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+                  onClick={() => setSelectedPhoto(photo)}
+                >
+                  <Image
+                    src={photo.src || `https://picsum.photos/${photo.width}/${photo.height}`}
+                    alt={photo.alt}
+                    width={photo.width}
+                    height={photo.height}
+                    quality={100}
+                    className="h-auto max-w-full transition-transform duration-300 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-opacity-0 hover:bg-opacity-30 transition-opacity duration-300 flex items-end">
+                    <span className="text-gray-800 p-2 opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white bg-opacity-75">
+                      {photo.alt}
+                    </span>
+                  </div>
+                </div>
+              ))}
           </div>
         ))}
       </div>
