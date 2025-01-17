@@ -8,18 +8,18 @@ import Footer from '@/components/Footer';
 import { extractDominantColors } from '@/utils/colorExtractor';
 
 const photos = [
-  { src: 'https://picsum.photos/300/400', alt: 'Landscape 1', width: 300, height: 400 },
-  { src: 'https://picsum.photos/400/300', alt: 'Cityscape 1', width: 400, height: 300 },
-  { src: 'https://picsum.photos/300/500', alt: 'Portrait 1', width: 300, height: 500 },
-  { src: 'https://picsum.photos/400/350', alt: 'Nature 1', width: 400, height: 350 },
-  { src: 'https://picsum.photos/300/450', alt: 'Architecture 1', width: 300, height: 450 },
-  { src: 'https://picsum.photos/400/400', alt: 'Abstract 1', width: 400, height: 400 },
-  { src: 'https://picsum.photos/300/300', alt: 'Still Life 1', width: 300, height: 300 },
-  { src: 'https://picsum.photos/400/500', alt: 'Wildlife 1', width: 400, height: 500 },
-  { src: 'https://picsum.photos/300/400', alt: 'Landscape 2', width: 300, height: 400 },
-  { src: 'https://picsum.photos/400/300', alt: 'Cityscape 2', width: 400, height: 300 },
-  { src: 'https://picsum.photos/300/500', alt: 'Portrait 2', width: 300, height: 500 },
-  { src: 'https://picsum.photos/400/350', alt: 'Nature 2', width: 400, height: 350 },
+  { src: 'https://picsum.photos/600/800', alt: 'Landscape 1', width: 600, height: 800 },
+  { src: 'https://picsum.photos/800/600', alt: 'Cityscape 1', width: 800, height: 600 },
+  { src: 'https://picsum.photos/600/1000', alt: 'Portrait 1', width: 600, height: 1000 },
+  { src: 'https://picsum.photos/800/700', alt: 'Nature 1', width: 800, height: 700 },
+  { src: 'https://picsum.photos/600/900', alt: 'Architecture 1', width: 600, height: 900 },
+  { src: 'https://picsum.photos/800/800', alt: 'Abstract 1', width: 800, height: 800 },
+  { src: 'https://picsum.photos/600/600', alt: 'Still Life 1', width: 600, height: 600 },
+  { src: 'https://picsum.photos/800/1000', alt: 'Wildlife 1', width: 800, height: 1000 },
+  { src: 'https://picsum.photos/600/800', alt: 'Landscape 2', width: 600, height: 800 },
+  { src: 'https://picsum.photos/800/600', alt: 'Cityscape 2', width: 800, height: 600 },
+  { src: 'https://picsum.photos/600/1000', alt: 'Portrait 2', width: 600, height: 1000 },
+  { src: 'https://picsum.photos/800/700', alt: 'Nature 2', width: 800, height: 700 },
 ];
 
 export default function Home() {

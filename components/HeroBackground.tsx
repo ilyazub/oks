@@ -10,7 +10,7 @@ export default function HeroBackground({ imageUrl, colors }: HeroBackgroundProps
   const { blur } = useParallaxBlur(colors);
 
   return (
-    (<div className="fixed inset-0 z-0">
+    (<div className="fixed inset-0 z-0 h-[90%]">
       <div
         className="absolute inset-0 transition-opacity duration-300"
         style={{
@@ -24,12 +24,12 @@ export default function HeroBackground({ imageUrl, colors }: HeroBackgroundProps
         priority
         fill
         sizes="100vw"
+        className="object-cover w-screen"
         style={{
           filter: `blur(${blur}px)`,
-
           objectFit: "cover"
         }} />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center z-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center z-10 backdrop-blur-sm">
         <h2 className="font-serif text-xl sm:text-2xl mb-2">Oksana Zub</h2>
         <h1 className="font-bold text-4xl sm:text-6xl mb-4">PHOTOGRAPHER</h1>
         <div className="flex items-center space-x-2 mb-4">
