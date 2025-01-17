@@ -10,7 +10,7 @@ export default function HeroBackground({ imageUrl, colors }: HeroBackgroundProps
   const { blur } = useParallaxBlur(colors);
 
   return (
-    (<div className="fixed inset-0 z-0 h-[90%]">
+    (<div className="fixed inset-0 z-0">
       <div
         className="absolute inset-0 transition-opacity duration-300"
         style={{
@@ -37,7 +37,6 @@ export default function HeroBackground({ imageUrl, colors }: HeroBackgroundProps
           <div className="w-2 h-2 rounded-full bg-white"></div>
           <div className="w-12 h-px bg-white"></div>
         </div>
-        <p className="text-sm sm:text-base">Category1 • Category2 • Category3 • Category4</p>
       </div>
     </div>)
   );

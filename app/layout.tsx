@@ -5,8 +5,8 @@ import { Metadata } from 'next'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Oksana Zub',
-  description: 'A visually engaging photo gallery with parallax scrolling and dynamic background',
+  title: 'Oksana Zub | Photographer | Warsaw',
+  description: 'Love story photo in Warsaw',
 }
 
 export default function RootLayout({

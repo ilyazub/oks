@@ -1,4 +1,4 @@
-import { ChevronUp, Facebook, Instagram, Twitter } from 'lucide-react'
+import { ChevronUp, Facebook, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -6,14 +6,11 @@ export default function Footer() {
       <ChevronUp className="w-6 h-6 cursor-pointer" onClick={() => window.scrollTo(0, 0)} />
 
       <div className="flex space-x-4">
-        <a href="#" className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors">
+        <a href="https://www.facebook.com/AstiiLL" className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors">
           <Facebook className="w-4 h-4" />
         </a>
-        <a href="#" className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors">
+        <a href="https://www.instagram.com/oksanazub_photography" className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors">
           <Instagram className="w-4 h-4" />
-        </a>
-        <a href="#" className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors">
-          <Twitter className="w-4 h-4" />
         </a>
       </div>
     </footer>
