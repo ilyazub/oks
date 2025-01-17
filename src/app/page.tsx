@@ -1,8 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import Header from '@/components/Header';
 import HeroBackground from '@/components/HeroBackground';
 import PhotoGallery from '@/components/PhotoGallery';
+import Footer from '@/components/Footer';
 import { extractDominantColors } from '@/utils/colorExtractor';
 
 const photos = [
@@ -14,7 +16,10 @@ const photos = [
   { src: '/placeholder.svg?height=400&width=400', alt: 'Abstract 1', width: 400, height: 400 },
   { src: '/placeholder.svg?height=300&width=300', alt: 'Still Life 1', width: 300, height: 300 },
   { src: '/placeholder.svg?height=500&width=400', alt: 'Wildlife 1', width: 400, height: 500 },
-  // Add more photos as needed
+  { src: '/placeholder.svg?height=400&width=300', alt: 'Landscape 2', width: 300, height: 400 },
+  { src: '/placeholder.svg?height=300&width=400', alt: 'Cityscape 2', width: 400, height: 300 },
+  { src: '/placeholder.svg?height=500&width=300', alt: 'Portrait 2', width: 300, height: 500 },
+  { src: '/placeholder.svg?height=350&width=400', alt: 'Nature 2', width: 400, height: 350 },
 ];
 
 export default function Home() {
@@ -27,8 +32,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      <Header />
       <HeroBackground imageUrl={heroImageUrl} colors={colors} />
       <PhotoGallery photos={photos} />
+      <Footer />
     </main>
   );
 }

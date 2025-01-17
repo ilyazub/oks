@@ -1,11 +1,11 @@
-import './globals.css'
+import '@/app/globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Oksana Zub Photography',
+  title: 'Oksana Zub',
   description: 'A visually engaging photo gallery with parallax scrolling and dynamic background',
 }
 
