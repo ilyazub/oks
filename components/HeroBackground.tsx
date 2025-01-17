@@ -7,26 +7,24 @@ interface HeroBackgroundProps {
 }
 
 export default function HeroBackground({ imageUrl, colors }: HeroBackgroundProps) {
-  const { scrollY, blur, backgroundColor } = useParallaxBlur(colors);
+  const { blur } = useParallaxBlur(colors);
 
   return (
     (<div className="fixed inset-0 z-0">
       <div
         className="absolute inset-0 transition-opacity duration-300"
         style={{
-          backgroundColor,
           opacity: blur / 20, // Fade in the color as blur increases
         }}
       />
       <Image
-        src={imageUrl || "/placeholder.svg"}
+        src={imageUrl || `https://picsum.photos/3920`}
         alt="Hero Background"
         quality={100}
         priority
         fill
         sizes="100vw"
         style={{
-          // transform: `translateY(${scrollY * 0.5}px)`, // Parallax effect
           filter: `blur(${blur}px)`,
 
           objectFit: "cover"

@@ -35,7 +35,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
             onClick={() => setSelectedPhoto(photo)}
           >
             <Image
-              src={photo.src || "/placeholder.svg"}
+              src={photo.src || `https://picsum.photos/${photo.width}/${photo.height}`}
               alt={photo.alt}
               width={photo.width}
               height={photo.height}
