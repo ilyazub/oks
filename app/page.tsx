@@ -6,6 +6,7 @@ import HeroBackground from '@/components/HeroBackground';
 import PhotoGallery from '@/components/PhotoGallery';
 import Footer from '@/components/Footer';
 import { extractDominantColors } from '@/utils/colorExtractor';
+import { metadata } from './layout'
 
 const photos = [
   { src: '/placeholder.svg?height=400&width=300', alt: 'Landscape 1', width: 300, height: 400 },

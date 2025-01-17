@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Photo {
@@ -40,7 +40,7 @@ export default function Modal({ photo, onClose, photos }: ModalProps) {
   const currentPhoto = photos[currentIndex];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+    (<div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-white hover:text-gray-300"
@@ -66,13 +66,15 @@ export default function Modal({ photo, onClose, photos }: ModalProps) {
         <Image
           src={currentPhoto.src || "/placeholder.svg"}
           alt={currentPhoto.alt}
-          layout="fill"
-          objectFit="contain"
           quality={100}
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "contain"
+          }} />
       </div>
       <p className="absolute bottom-4 text-white text-center w-full">{currentPhoto.alt}</p>
-    </div>
+    </div>)
   );
 }
 
