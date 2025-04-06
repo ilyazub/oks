@@ -18,6 +18,15 @@ interface ModalProps {
 export default function Modal({ photo, onClose, photos }: ModalProps) {
   const [currentIndex, setCurrentIndex] = useState(photos.findIndex(p => p.src === photo.src));
 
+  const navigateImage = useCallback((direction: number) => {
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex + direction;
+      if (newIndex < 0) return photos.length - 1;
+      if (newIndex >= photos.length) return 0;
+      return newIndex;
+    });
+  }, [photos.length]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -27,15 +36,6 @@ export default function Modal({ photo, onClose, photos }: ModalProps) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [navigateImage, onClose]);
-
-  const navigateImage = useCallback((direction: number) => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex + direction;
-      if (newIndex < 0) return photos.length - 1;
-      if (newIndex >= photos.length) return 0;
-      return newIndex;
-    });
-  }, [photos.length]);
 
   const currentPhoto = photos[currentIndex];
 
