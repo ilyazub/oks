@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -26,16 +26,16 @@ export default function Modal({ photo, onClose, photos }: ModalProps) {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex]);
+  }, [navigateImage, onClose]);
 
-  const navigateImage = (direction: number) => {
+  const navigateImage = useCallback((direction: number) => {
     setCurrentIndex((prevIndex) => {
       const newIndex = prevIndex + direction;
       if (newIndex < 0) return photos.length - 1;
       if (newIndex >= photos.length) return 0;
       return newIndex;
     });
-  };
+  }, [photos.length]);
 
   const currentPhoto = photos[currentIndex];
 
